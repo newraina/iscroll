@@ -405,6 +405,11 @@ IScroll.prototype = {
 		this.maxScrollX		= this.wrapperWidth - this.scrollerWidth;
 		this.maxScrollY		= this.wrapperHeight - this.scrollerHeight;
 
+		 // #CUSTOM - forcing the scroll even if the height is low
+		if ( this.maxScrollY >=0 ) {
+			this.maxScrollY = -1;
+		}
+
 /* REPLACE END: refresh */
 
 		this.hasHorizontalScroll	= this.options.scrollX && this.maxScrollX < 0;
